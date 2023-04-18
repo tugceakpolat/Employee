@@ -15,7 +15,7 @@ public class Employee {
 
     }
 
-    public double taxCalculate(){
+    private double taxCalculate(){
         //  If the employee's salary is more than 1000 TL, 3% of his salary is taxed.
         double tax=0;
         if (salary > 1000){
@@ -25,7 +25,7 @@ public class Employee {
 
     }
 
-    public double bonusCalculate(){
+    private double bonusCalculate(){
         //f the employee has worked more than 40 hours per week,30 TL per hour.
         double bonus=0;
         int extraHour = weekWorkHour - 40;
@@ -35,7 +35,7 @@ public class Employee {
         return bonus;
     }
 
-    public double raiseSalary() {
+    private double raiseSalary() {
         //10 years %5
         //10-20 years %10
         //20 years and more %15
@@ -53,7 +53,7 @@ public class Employee {
       return salaryRaise;
     }
 
-    public double totalSalary(){
+    private double totalSalary(){
         return salary + bonusCalculate() + raiseSalary() - taxCalculate();
     }
 
@@ -67,6 +67,11 @@ public class Employee {
         System.out.println("Salary increase : " + raiseSalary());
         System.out.println("Salary with bonus & tax : " + (salary +bonusCalculate() - taxCalculate()));
         System.out.println("Total salary : " + totalSalary());
+    }
+
+    // This overrides classic toString() method for this class.
+    public String toString() {
+        return "Name Surname: " + this.employeNameSurname + " Salary: " + this.salary + " Starting Year : " + this.startingYear + " Tax : " + taxCalculate() + " Bonus : " + bonusCalculate() + " Salary increase : " + raiseSalary() + " Salary with bonus & tax : " + (salary +bonusCalculate() - taxCalculate()) + " Total salary : " + totalSalary();
     }
 }
 
