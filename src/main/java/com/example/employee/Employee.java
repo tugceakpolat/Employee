@@ -58,15 +58,22 @@ public class Employee {
     }
 
 
-    public void employeInfo(){
-        System.out.println("Name Surname: " + this.employeNameSurname);
-        System.out.println("Salary's : " + this.salary);
-        System.out.println("Starting Year : " + this.startingYear);
-        System.out.println("Tax : " + taxCalculate());
-        System.out.println("Bonus : " + bonusCalculate());
-        System.out.println("Salary increase : " + raiseSalary());
-        System.out.println("Salary with bonus & tax : " + (salary +bonusCalculate() - taxCalculate()));
-        System.out.println("Total salary : " + totalSalary());
+//        public void employeInfo(){
+//        System.out.println("Name Surname: " + this.employeNameSurname);
+//        System.out.println("Salary's : " + this.salary);
+//        System.out.println("Starting Year : " + this.startingYear);
+//        System.out.println("Tax : " + taxCalculate());
+//        System.out.println("Bonus : " + bonusCalculate());
+//        System.out.println("Salary increase : " + raiseSalary());
+//        System.out.println("Salary with bonus & tax : " + (salary +bonusCalculate() - taxCalculate()));
+//        System.out.println("Total salary : " + totalSalary());
+//    }
+
+    //override method.
+    public String toString(){
+        return "Name Surname: " + this.employeNameSurname + "\nSalary's : " + this.salary +"\nTax : " + taxCalculate() +"\nBonus : "
+                + bonusCalculate() +"\nSalary increase : " + raiseSalary() + "\nSalary with bonus & tax : " + (salary +bonusCalculate())
+               + "\nTotal salary : " + totalSalary();
     }
 }
 
